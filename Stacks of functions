@@ -1,0 +1,17 @@
+def a():
+    print('Rozpoczecie wykonywania funkcju a')
+    b()
+    d()
+    print('Zakonczenie wykonywania funkcji b')
+def b():
+    print('Rozpoczecie wykonywania funkcji b')
+    c()
+    print('Zakonczenie wykonywania funkcji b')
+def c():
+    print('Rozpoczecie wykonywania funkcji c')
+    print('Zakonczenie wykonywania funkcji c')
+def d():
+    print('Rozpoczecie wykonywania funkcji d')
+    print('Zakonczenie wykonywania funckji d')
+
+a()
