@@ -1,0 +1,18 @@
+def collatz(number):
+    if number % 2 == 0:
+        return number // 2
+    else:
+        return 3 * number + 1
+
+check_if_number = False
+while check_if_number is not True:
+    try:
+        n = int(input("Chose integer number greater than 1: "))
+        check_if_number = True
+    except ValueError:
+        print("Chosen value is not integer")
+        print()
+        continue
+while n != 1:
+        n = collatz(n)
+        print(n)
