@@ -19,6 +19,6 @@ for experiment_number in range(number_of_repeats):
                     streak = 1
                 if streak == 6:
                     number_of_streaks +=1
-            break
+                break
 
 print('Chance of striking 6 same tosses in 100 tries is: ', (number_of_streaks/(number_of_repeats * all_tosses)), '%.')
