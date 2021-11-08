@@ -1,0 +1,19 @@
+def displayInventory(inventory):
+    print("Inwentarz:")
+    item_total = 0
+    for key, value in inventory.items():
+        print(str(value) + ' ' + key)
+        item_total += value
+    print('Łączna liczba przedmiotów: ', + (item_total))
+
+def addToInvetory(inventory, addeditems):
+    for item in addeditems:
+        inventory.setdefault(item, 0)
+        inventory[item] += 1
+    return inventory
+
+inv = {'lina': 1, 'pochodnia': 6, 'złote monety': 42, 'sztylet': 1, 'strzał': 12}
+dragon_loot = ['złote monety', 'złote monety', 'złote monety', 'rubin', 'szafir']
+inv = addToInvetory(inv, dragon_loot)
+
+print(displayInventory(inv))
