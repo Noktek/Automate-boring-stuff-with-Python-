@@ -1,24 +1,24 @@
 import random
 
-coin_tosses = []
 number_of_streaks = 0
-streak = 1
-all_tosses = 100
+coin_tosses = []
+streak = 0
 number_of_repeats = 10000
+all_tosses = 100
 
-for experiment_number in range(number_of_repeats):
-        for tosses in range(all_tosses):
-            coin_tosses.append(random.randint(0, 1))
+for experiment in range(number_of_repeats):
+    for toss in range(all_tosses):
+        coin_tosses.append(random.randint(0, 1))
+    for i in range(len(coin_tosses)):
+        if i == 0:
+            pass
+        elif coin_tosses[i] == coin_tosses[i-1]:
+            streak += 1
+        
+        else:
+            streak = 0
+        if streak == 6:
+            number_of_streaks +=1
+    coin_tosses = []
 
-            for i in range(len(coin_tosses)):
-                if i == 0:
-                     pass
-                elif coin_tosses[i] == coin_tosses[i-1]:
-                    streak += 1
-                else:
-                    streak = 1
-                if streak == 6:
-                    number_of_streaks +=1
-                break
-
-print('Chance of striking 6 same tosses in 100 tries is: ', (number_of_streaks/(number_of_repeats * all_tosses)), '%.')
+print('Chance of striking 6 same tosses in 100 tries is: ', (number_of_streaks*100/(number_of_repeats * all_tosses)), '%.')
